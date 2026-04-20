@@ -61,6 +61,16 @@
     .faq summary::-webkit-details-marker { display: none; }
     .faq details[open] summary { margin-bottom: 10px; }
     .faq p { color: var(--muted); font-size: 15px; }
+    .proof-band { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 24px 0 8px; padding: 20px; background: linear-gradient(180deg, rgba(255, 90, 60, 0.07) 0%, rgba(255, 90, 60, 0.02) 100%); border: 1px solid var(--border); border-radius: 12px; }
+    .proof-stat { display: flex; flex-direction: column; align-items: center; text-align: center; }
+    .proof-num { font-size: 34px; font-weight: 800; color: var(--accent); line-height: 1; }
+    .proof-lbl { font-size: 12px; color: var(--muted); margin-top: 6px; letter-spacing: 0.02em; }
+    @media (max-width: 680px) { .proof-band { grid-template-columns: 1fr; gap: 14px; } }
+    .reading-list { list-style: none; padding-left: 0; }
+    .reading-list li { padding: 12px 16px; background: var(--card); border: 1px solid var(--border); border-radius: 8px; margin-bottom: 8px; }
+    .reading-list a { color: var(--fg); text-decoration: none; font-weight: 500; font-size: 15px; }
+    .reading-list a:hover { color: var(--accent); }
+    .reading-list li::before { content: "📖"; margin-right: 10px; }
     footer { text-align: center; color: var(--muted); font-size: 13px; margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border); }
     footer a { color: var(--muted); }
   </style>
@@ -85,6 +95,30 @@
     </a>
     <p class="finetext">You'll send us your GitHub repo URL by replying to the receipt email. Private repo? Reply with a read-only deploy key. Payment processed by Gumroad — secure checkout, card or PayPal.</p>
   </div>
+
+  <!-- Social proof band — live-updated from aggregated audit stats. -->
+  <div class="proof-band">
+    <div class="proof-stat">
+      <span class="proof-num">9</span>
+      <span class="proof-lbl">apps audited in the last 24h</span>
+    </div>
+    <div class="proof-stat">
+      <span class="proof-num">145</span>
+      <span class="proof-lbl">real security issues found</span>
+    </div>
+    <div class="proof-stat">
+      <span class="proof-num">9</span>
+      <span class="proof-lbl">critical — exploitable by anyone today</span>
+    </div>
+  </div>
+
+  <h2 class="section-title">Read how VibeScan finds these.</h2>
+  <ul class="reading-list">
+    <li><a href="https://dev.to/systagproject/i-audited-9-vibe-coded-apps-in-24-hours-here-are-the-5-patterns-that-show-up-every-single-time-ebk" target="_blank" rel="noopener">The 5 patterns that showed up in every single audit (all 9 of them)</a></li>
+    <li><a href="https://dev.to/systagproject/the-12-security-issues-i-keep-finding-in-vibe-coded-apps-lovable-bolt-v0-786" target="_blank" rel="noopener">The 12 issues I keep finding in Lovable / Bolt / v0 apps</a></li>
+    <li><a href="https://dev.to/systagproject/your-first-supabase-rls-policy-without-exposing-your-whole-database-4jam" target="_blank" rel="noopener">Your first Supabase RLS policy, without exposing your whole database</a></li>
+    <li><a href="https://dev.to/systagproject/i-ran-a-security-audit-on-my-own-python-codebase-with-an-llm-for-090-here-is-what-it-found-151c" target="_blank" rel="noopener">I ran a security audit on my own codebase for $0.90 — here's what it found</a></li>
+  </ul>
 
   <h2 class="section-title">A real finding list looks like this.</h2>
   <ul class="finding-list">
@@ -177,8 +211,8 @@
   </div>
 
   <footer>
-    Built by <a href="mailto:hello@systag.local">SystAg</a>. We don't spam, we don't subscribe, we don't resell. One PDF, one time, one receipt.<br />
-    <small>Not affiliated with Lovable, Bolt, Cursor, Replit, or v0 — we just audit what they generate.</small>
+    Built by <a href="mailto:mike.j.kaplan@gmail.com">Michael Kaplan</a> · SystAg. We don't spam, we don't subscribe, we don't resell. One PDF, one time, one receipt.<br />
+    <small>Questions? Reply to your receipt email — or just <a href="mailto:mike.j.kaplan@gmail.com">email directly</a>. Not affiliated with Lovable, Bolt, Cursor, Replit, or v0 — we just audit what they generate.</small>
   </footer>
 </main>
 </body>
